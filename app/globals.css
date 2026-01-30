@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
+/* Custom Properties - Dark Blue Corporate Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Corporate Blue Palette */
+  --primary: #0F2A4A;
+  /* Dark Navy Blue */
+  --primary-light: #1B4570;
+  --primary-dark: #091D33;
+  --secondary: #1B8DBA;
+  /* Bright Blue accent */
+  --secondary-light: #2BA3D4;
+  --secondary-dark: #147396;
+  --accent: #C9A86A;
+  /* Gold accent */
+
+  /* Neutrals */
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --text: #1E293B;
+  --text-light: #64748B;
+  --border: #E2E8F0;
+
+  --background: #F8FAFC;
+  --foreground: #1E293B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+  --color-primary: #0F2A4A;
+  --color-secondary: #1B8DBA;
+  --color-accent: #C9A86A;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Arial', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar - Dark Blue */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E2E8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Professional Font Classes */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-heading {
+  font-family: 'Roboto', 'Arial', 'Helvetica Neue', -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Selection Color - Blue */
+::selection {
+  background: var(--secondary);
+  color: white;
+}
+
+/* Section Padding */
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Corporate Card Style */
+.corporate-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.corporate-card:hover {
+  box-shadow: 0 10px 40px rgba(15, 42, 74, 0.15);
+  transform: translateY(-4px);
 }
