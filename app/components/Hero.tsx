@@ -11,7 +11,7 @@ export default function Hero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/desain/1701501464426-3af27137-ec9d-42b2-8932-ab4dbb05a094.jpeg"
+                    src="/hero-gemini.png"
                     alt="Anjayo Residence"
                     fill
                     priority
